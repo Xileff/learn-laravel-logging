@@ -48,4 +48,14 @@ class LoggingTest extends TestCase
 
         self::assertTrue(true);
     }
+
+    public function testHandler()
+    {
+        $fileLogger = Log::channel('file');
+        $fileLogger->info("Hello info");
+        $fileLogger->warning("Hello warning");
+        $fileLogger->error("Hello error");
+
+        self::assertTrue(true);
+    }
 }
