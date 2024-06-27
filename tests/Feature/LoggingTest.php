@@ -36,4 +36,16 @@ class LoggingTest extends TestCase
 
         self::assertTrue(true);
     }
+
+    public function testWithChannel()
+    {
+        // Selected channel
+        $stdErrLogger = Log::channel('stderr');
+        $stdErrLogger->info("Selected channel : stderr");
+
+        // Default channel
+        Log::info("Default channels : single, slack, stderr");
+
+        self::assertTrue(true);
+    }
 }
